@@ -580,6 +580,18 @@
     </section>
   </div>
 
+  <h3 style="margin-top: var(--sp-5)">Margin note</h3>
+  <p class="muted">Floats outside the prose column on wide viewports (≥1400px); falls back to an inline block with a left rule on narrower screens. Override <code>--note-width</code> (default: 12rem) on the element to resize.</p>
+  <div class="prose" style="max-width: 44rem; margin-top: var(--sp-4);">
+    <p>Lewk is an editorial CSS framework with a single accent color and alpha-stepped grayscale. <span class="margin-note">Notes appear in the right margin on wide viewports, where they hover beside the text they annotate without interrupting reading flow.</span> Every other token derives via <code>color-mix()</code>, so the entire UI re-tints from one pair. Hairline rules instead of cards keep the layout open and typographic.</p>
+    <p>The theme system is designed so swapping a theme never breaks layout. Foreground and background swap cleanly, the accent shifts, and all swatches, rules, and buffers follow.</p>
+  </div>
+
+  <div class="prose" style="max-width: 44rem; margin-top: var(--sp-4);">
+    <p>Lewk is an editorial CSS framework with a single accent color and alpha-stepped grayscale. <span class="margin-note dark">Notes appear in the right margin on wide viewports, where they hover beside the text they annotate without interrupting reading flow.</span> Every other token derives via <code>color-mix()</code>, so the entire UI re-tints from one pair. Hairline rules instead of cards keep the layout open and typographic.</p>
+    <p>The theme system is designed so swapping a theme never breaks layout. Foreground and background swap cleanly, the accent shifts, and all swatches, rules, and buffers follow.</p>
+  </div>
+
   <h3 style="margin-top: var(--sp-5)">Status pill</h3>
   <p class="muted">One-line indicator with accent dot. Pair with a <code>&lt;time&gt;</code> for "last updated".</p>
   <span class="status">Sprouting</span>

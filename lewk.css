@@ -733,6 +733,40 @@ th { font-family: var(--font-ui); text-transform: uppercase; font-size: var(--fs
 .prose h3 { margin-top: var(--sp-4); }
 .prose img { margin: var(--sp-4) 0; }
 
+/* margin note — floats outside the prose column on wide viewports; inline on narrow */
+.margin-note {
+  --note-width: 12rem;
+  font-family: var(--font-ui);
+  font-size: var(--fs-2);
+  color: var(--muted-color);
+  line-height: var(--leading-body);
+  padding: var(--sp-3);
+
+}
+@media (min-width: 1400px) {
+  .margin-note {
+    float: right;
+    clear: right;
+    width: var(--note-width);
+    margin-right: calc(-1 * (var(--note-width) + var(--gutter) * 2));
+    margin-left: var(--gutter);
+    margin-bottom: var(--sp-2);
+  }
+}
+@media (max-width: 1399px) {
+  .margin-note {
+    display: block;
+    margin: var(--sp-3) 0;
+    border-left: var(--rule-strong);
+  }
+}
+
+.margin-note.dark{
+    background: var(--buffer);
+    color: var(--text-color);
+    border-left: 1px solid;
+}
+
 /* footer */
 .footer {
   margin-top: var(--sp-6);
@@ -793,8 +827,30 @@ th { font-family: var(--font-ui); text-transform: uppercase; font-size: var(--fs
  * 5. UTILITIES
  * ========================================================= */
 
-.muted { color: var(--muted-color); }
+.fg    { color: var(--fg); }
+.bg    { color: var(--bg); }
 .accent { color: var(--accent); }
+.muted  { color: var(--muted-color); }
+
+.swatch-1 { color: var(--swatch-1); }
+.swatch-2 { color: var(--swatch-2); }
+.swatch-3 { color: var(--swatch-3); }
+.swatch-4 { color: var(--swatch-4); }
+.swatch-5 { color: var(--swatch-5); }
+.swatch-6 { color: var(--swatch-6); }
+
+.fg-bg         { background: var(--fg);             color: var(--bg); }
+.accent-bg     { background: var(--accent);          color: var(--bg); }
+.muted-bg      { background: var(--muted-color);     color: var(--bg); }
+.swatch-1-bg   { background: var(--swatch-1);        color: var(--bg); }
+.swatch-2-bg   { background: var(--swatch-2);        color: var(--bg); }
+.swatch-3-bg   { background: var(--swatch-3);        color: var(--bg); }
+.swatch-4-bg   { background: var(--swatch-4);        color: var(--bg); }
+.swatch-5-bg   { background: var(--swatch-5);        color: var(--text-color); }
+.swatch-6-bg   { background: var(--swatch-6);        color: var(--text-color); }
+.buffer-bg     { background: var(--buffer);          color: var(--text-color); }
+.buffer-strong-bg { background: var(--buffer-strong); color: var(--text-color); }
+
 .ui { font-family: var(--font-ui); text-transform: uppercase; font-size: var(--fs-2); letter-spacing: 0.06em; }
 .serif { font-family: var(--font-serif); }
 .mono { font-family: var(--font-mono); }
