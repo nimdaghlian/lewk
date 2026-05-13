@@ -272,6 +272,44 @@
     </article>
   </div>
 
+  <h3 style="margin-top: var(--sp-5)">Sidebar — hairline divider (<code>gap: 0</code>)</h3>
+  <p class="muted">Asymmetric layout with a vertical hairline between columns. Unlike <code>.split</code>, uses <code>gap: 0</code> — whitespace comes from padding on each column, so the border can meet adjacent horizontal rules at the corner. Modifiers: <code>--right</code>, <code>--wide</code>, <code>--thin</code>.</p>
+  <div class="sidebar" id="sidebar" style="margin-top: var(--sp-3)">
+    <aside class="stack-tight">
+      <div class="meta">On this page</div>
+      <a href="#" style="display:block">Introduction</a>
+      <a href="#" style="display:block">Methods</a>
+      <a href="#" style="display:block">Findings</a>
+      <a href="#" style="display:block">Footnotes</a>
+      <div class="meta" style="margin-top: var(--sp-3)">Tags</div>
+      <div class="cluster">
+        <a class="tag" href="#">essay</a>
+        <a class="tag" href="#">notes</a>
+      </div>
+    </aside>
+    <article>
+      <h4 style="margin-top:0">An entry, with sidebar</h4>
+      <p>Same pattern as <code>.split</code>, but the divider is a hairline <code>border-right</code> with <code>gap: 0</code>. No gutter — each column owns its own padding.</p>
+      <p>Curabitur laoreet erat et sapien venenatis luctus. Nullam mollis turpis nec varius scelerisque, est est ornare enim, sit amet facilisis ante metus posuere sapien.</p>
+    </article>
+  </div>
+
+  <h3 style="margin-top: var(--sp-5)">Sidebar — borders meeting (<code>--ruled</code> / <code>.section--flush</code>)</h3>
+  <p class="muted">Two ways to make perpendicular hairlines meet at a corner rather than leaving a gap. <strong><code>--ruled</code></strong>: the sidebar owns its own <code>border-top</code> with no padding-top on the container — both borders originate at y=0 and meet. <strong><code>.section--flush</code></strong>: same effect when the parent <code>.section</code> provides the horizontal border; removes the section's padding-top so the child grid starts flush with it.</p>
+
+  <div class="sidebar sidebar--ruled" style="margin-top: var(--sp-3)">
+    <aside class="stack-tight">
+      <div class="meta">Sidebar</div>
+      <a href="#" class="link-bracket" style="display:block">Link one</a>
+      <a href="#" class="link-bracket" style="display:block">Link two</a>
+      <a href="#" class="link-bracket" style="display:block">Link three</a>
+    </aside>
+    <article>
+      <h4 style="margin-top:0">Borders meeting</h4>
+      <p>The <code>border-right</code> on the sidebar column and the <code>border-top</code> on the container both start at the same coordinate — no gap at the corner. Use <code>.section--flush</code> when the parent <code>.section</code> should provide the horizontal rule instead.</p>
+    </article>
+  </div>
+
   <h3 style="margin-top: var(--sp-5)">Feature — image / text</h3>
   <div class="feature">
     <div class="feature-media" style="background: linear-gradient(135deg, var(--swatch-3), var(--swatch-5))"></div>
@@ -315,6 +353,19 @@
 
 <section class="section" id="components">
   <h2>Components</h2>
+
+  <div class="row">
+    <div class="label">Breadcrumb</div>
+    <div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#">Home</a>
+        <a href="#">Essays</a>
+        <a href="#">2026</a>
+        <span aria-current="page">A walk in England</span>
+      </nav>
+      <p class="muted small">UI font at <code>--fs-2</code>; ancestors are muted, current page is full text color. Separator <code>/</code> via <code>::before</code>.</p>
+    </div>
+  </div>
 
   <div class="row">
     <div class="label">Buttons</div>

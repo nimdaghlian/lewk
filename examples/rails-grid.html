@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-font="serif">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing — lewk example</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../lewk.css">
+</head>
+<body>
+
+<nav class="nav flush">
+  <a class="brand" href="../">lewk</a>
+  <a href="#">Writing</a>
+  <a href="#">Projects</a>
+  <a href="#">About</a>
+</nav>
+<nav class="breadcrumb bare" aria-label="Breadcrumb">
+  <a href="#">Home</a>
+  <span aria-current="page">Writing</span>
+</nav>
+<main>
+
+
+<section class="section">
+  <div class="row">
+    <div class="label">Writing</div>
+    <div>
+      <h2 style="margin: 0 0 var(--sp-2)">Essays &amp; notes</h2>
+      <p class="muted">Long-form essays, field notes, and shorter observations. Updated irregularly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Rails: featured pieces, editorial equal-column layout -->
+<section class="section reading">
+  <h6>Featured</h6>
+  <div class="rails rails-3" style="margin-top: var(--sp-3); border-top: var(--rule); padding-top: var(--sp-4)">
+    <div>
+      <div class="meta">Essay · May 2026</div>
+      <h3 style="margin: var(--sp-2) 0 var(--sp-3)">On slowness and attention</h3>
+      <p>Walking long routes forces a reckoning with time. Not the managed time of calendars but time as texture — thick in some places, thin in others.</p>
+      <a class="link-arrow" href="#">Read</a>
+    </div>
+    <div>
+      <div class="meta">Essay · Feb 2026</div>
+      <h3 style="margin: var(--sp-2) 0 var(--sp-3)">The uses of fog</h3>
+      <p>Fog is not the absence of landscape but a different kind of presence. Navigation becomes haptic. You read the ground instead of the view.</p>
+      <a class="link-arrow" href="#">Read</a>
+    </div>
+    <div>
+      <div class="meta">Field notes · Nov 2025</div>
+      <h3 style="margin: var(--sp-2) 0 var(--sp-3)">Bark Barque Baroque</h3>
+      <p>Three weeks in the Cévennes. Notes on the chestnut, the mulberry, the relationship between terrain and what grows from it.</p>
+      <a class="link-arrow" href="#">Read</a>
+    </div>
+  </div>
+</section>
+
+<!-- Grid: full card index -->
+<section class="section wide">
+  <h6>All writing</h6>
+  <div class="grid" style="margin-top: var(--sp-3)">
+    <a class="card" href="#">
+      <div class="card-thumb"></div>
+      <div class="card-title">Into the Vercors</div>
+      <div class="card-meta">May 2026 · field-notes</div>
+    </a>
+    <a class="card" href="#">
+      <div class="card-thumb"></div>
+      <div class="card-title">A Winter Circuit</div>
+      <div class="card-meta">Jan 2026 · field-notes</div>
+    </a>
+    <a class="card" href="#">
+      <div class="card-thumb"></div>
+      <div class="card-title">Coastal Survey</div>
+      <div class="card-meta">Jul 2025 · field-notes</div>
+    </a>
+    <a class="card" href="#">
+      <div class="card-thumb"></div>
+      <div class="card-title">A Thousand Miles</div>
+      <div class="card-meta">Apr 2025 · essay</div>
+    </a>
+    <a class="card" href="#">
+      <div class="card-thumb"></div>
+      <div class="card-title">Nepal, 1975</div>
+      <div class="card-meta">Sep 2025 · field-notes</div>
+    </a>
+    <a class="card" href="#">
+      <div class="card-thumb"></div>
+      <div class="card-title">High Routes</div>
+      <div class="card-meta">Nov 2023 · field-notes</div>
+    </a>
+    <a class="card" href="#">
+      <div class="card-thumb"></div>
+      <div class="card-title">The Plateau</div>
+      <div class="card-meta">Jun 2023 · notes</div>
+    </a>
+    <a class="card" href="#">
+      <div class="card-thumb"></div>
+      <div class="card-title">Clearing Notes</div>
+      <div class="card-meta">Mar 2024 · notes</div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>lewk example — rails + grid layout</span>
+  <a href="../" class="meta">← Reference</a>
+</footer>
+
+<div class="themer" role="group" aria-label="Theme and font">
+  <div class="themer-group">
+    <button data-theme-set="light"     title="light"     style="background:#fff;border-color:#111"></button>
+    <button data-theme-set="paper"     title="paper"     style="background:#f4ecdc;border-color:#2a2418"></button>
+    <button data-theme-set="hot"       title="hot"       style="background:#fff8f0;border-color:#a8092b"></button>
+    <button data-theme-set="moss"      title="moss"      style="background:#d8dcc4;border-color:#1b2618"></button>
+    <button data-theme-set="ocean"     title="ocean"     style="background:#0c2436;border-color:#5acab1"></button>
+    <button data-theme-set="dark"      title="dark"      style="background:#111;border-color:#ff8a14"></button>
+    <button data-theme-set="noir"      title="noir"      style="background:#0a0a0a;border-color:#d31138"></button>
+    <button data-theme-set="lagoon"    title="lagoon"    style="background:#226985;border-color:#fdf4b6"></button>
+    <button data-theme-set="iris"      title="iris"      style="background:#c2e88e;border-color:#4e0e6c"></button>
+    <button data-theme-set="lemon"     title="lemon"     style="background:#fff700;border-color:#1a1a00"></button>
+    <button data-theme-set="blueprint" title="blueprint" style="background:#001a4d;border-color:#e6f0ff"></button>
+    <button data-theme-set="rose"      title="rose"      style="background:#ffd5e0;border-color:#2a0814"></button>
+    <button data-theme-set="newsprint" title="newsprint" style="background:#e8e6dc;border-color:#1a1a1a"></button>
+  </div>
+  <div class="themer-divider"></div>
+  <div class="themer-group">
+    <button data-font-set="serif"  title="serif"  style="font-family: Lora, serif">Aa</button>
+    <button data-font-set="sans"   title="sans"   style="font-family: Inter, sans-serif; font-weight: 500">Aa</button>
+    <button data-font-set="block"  title="block"  style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">Aa</button>
+    <button data-font-set="mono"   title="mono"   style="font-family: ui-monospace, monospace">Aa</button>
+    <button data-font-set="pixel"  title="pixel"  style="font-family: VT323, monospace; font-size: 16px">Aa</button>
+  </div>
+</div>
+
+<script src="../themer.js"></script>
+</body>
+</html>

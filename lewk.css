@@ -69,7 +69,8 @@
   --page-pad-x: clamp(1rem, 2.5vw, 2.25rem);
   --page-pad-y: clamp(1rem, 3vh, 2.5rem);
   --col-narrow: 22rem;
-  --col-wide: 50rem;
+  --col-mid: 80rem;
+  --col-wide: 125rem;
   --gutter: clamp(1rem, 2vw, 2rem);
 }
 
@@ -245,14 +246,14 @@ th { font-family: var(--font-ui); text-transform: uppercase; font-size: var(--fs
  * ========================================================= */
 
 /* full-bleed by default — body padding sets the gutter */
-.page          { max-width: none; }
+.full          { max-width: none; }
 /* opt-in centered measures for long-form */
-.page--prose   { max-width: var(--col-narrow); margin: 0 auto; }
-.page--reading { max-width: var(--col-wide);   margin: 0 auto; }
+.wide   { max-width: var(--col-wide); margin: 0 auto; }
+.narrow   { max-width: var(--col-narrow); margin: 0 auto; }
+.reading { max-width: var(--col-mid);   margin: 0 auto; }
 /* a section that pulls back to a narrow measure inside a full-bleed page */
-.measure       { max-width: var(--col-wide);   margin-left: auto; margin-right: auto; }
-.measure--narrow { max-width: var(--col-narrow); margin-left: auto; margin-right: auto; }
-
+.right       { margin-right: 0px; }
+.left { margin-left: 0px;}
 /* hairline-ruled section, the cargo signature */
 .section {
   padding: var(--sp-4) 0;
@@ -333,6 +334,29 @@ th { font-family: var(--font-ui); text-transform: uppercase; font-size: var(--fs
   .split--wide  { grid-template-columns: 2fr 1fr; }
   .split--thin  { grid-template-columns: minmax(8rem, 14rem) 1fr; }
 }
+
+/* sidebar — asymmetric layout with a vertical hairline divider.
+ * Unlike .split, gap is 0; whitespace comes from padding on each column,
+ * so perpendicular borders can meet adjacent horizontal rules at the corner. */
+.sidebar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4) 0;
+}
+@media (min-width: 800px) {
+  .sidebar        { grid-template-columns: minmax(10rem, 20rem) 1fr; gap: 0; }
+  .sidebar--wide  { grid-template-columns: minmax(16rem, 28rem) 1fr; }
+  .sidebar--thin  { grid-template-columns: minmax(6rem,  12rem) 1fr; }
+  .sidebar--right { grid-template-columns: 1fr minmax(10rem, 20rem); }
+  .sidebar > :first-child { border-right: var(--rule); padding-right: var(--sp-4); }
+  .sidebar > :last-child  { padding-left: var(--sp-4); }
+  .sidebar--right > :first-child { border-right: none; }
+  .sidebar--right > :last-child  { border-left: var(--rule); }
+}
+/* --ruled: sidebar owns its top border with no padding-top on the container.
+ * border-top and the column's border-right share y=0 — they meet at the corner. */
+.sidebar--ruled { border-top: var(--rule); }
+.sidebar--ruled > * { padding-top: var(--sp-4); }
 
 /* span utilities for grid children */
 .span-2    { grid-column: span 1; }
@@ -438,6 +462,23 @@ th { font-family: var(--font-ui); text-transform: uppercase; font-size: var(--fs
 .nav a { text-decoration: none; }
 .nav a:hover { text-decoration: underline; text-decoration-style: wavy; text-decoration-color: var(--accent); }
 .nav .brand { font-family: var(--font-display); font-size: var(--fs-3); text-transform: none; letter-spacing: 0; margin-right: auto; }
+
+/* breadcrumb — path indicator bar, smaller than body, UI font */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: var(--fs-2);
+  color: var(--muted-color);
+  padding: var(--sp-2) 0;
+  border-bottom: var(--rule);
+  margin-bottom: var(--sp-4);
+}
+.breadcrumb a { color: inherit; text-decoration: none; }
+.breadcrumb a:hover { color: var(--text-color); text-decoration: underline; text-decoration-style: wavy; text-decoration-color: var(--accent); }
+.breadcrumb > * + *::before { content: "/"; margin: 0 var(--sp-2); color: var(--swatch-5); }
+.breadcrumb [aria-current="page"] { color: var(--text-color); }
 
 /* meta — small monospace caption */
 .meta {
@@ -686,7 +727,7 @@ th { font-family: var(--font-ui); text-transform: uppercase; font-size: var(--fs
 }
 
 /* prose — article body width and rhythm */
-.prose { max-width: var(--col-wide); }
+.prose { max-width: var(--col-mid); }
 .prose > * + * { margin-top: var(--sp-3); }
 .prose h2 { margin-top: var(--sp-5); }
 .prose h3 { margin-top: var(--sp-4); }
@@ -761,3 +802,6 @@ th { font-family: var(--font-ui); text-transform: uppercase; font-size: var(--fs
 .right { text-align: right; }
 .fill-bg { background: var(--buffer); padding: var(--sp-3); }
 .invert { background: var(--text-color); color: var(--bg); padding: var(--sp-3); }
+.bare { border: none; padding: 0; margin: var(--sp-2) 0; }
+.flush { margin-bottom: 0; }
+.flush-top { padding-top: 0; }
